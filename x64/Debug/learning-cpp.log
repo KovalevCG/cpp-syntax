@@ -1,3 +1,0 @@
-﻿  Source.cpp
-Z:\personal\-code-\learning-cpp\Source.cpp(4,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  learning-cpp.vcxproj -> Z:\personal\-code-\learning-cpp\x64\Debug\learning-cpp.exe

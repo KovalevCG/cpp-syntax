@@ -7,7 +7,7 @@ using std::cin;
 using std::string;
 
 
-void coutHello (string str) {
+void coutHello(string str) {
 	cout << "Hello " << str << " !!!\n";
 }
 
@@ -15,15 +15,15 @@ void dataTypes() {
 
 	// Numerical Data Types
 	cout << "--------------=< Numerical Data Types >=-------------" << endl;
-	cout << "Size of Short: (short):  " << sizeof (short) << " byte(s)" << "     MIN: " << SHRT_MIN << "; MAX: " << SHRT_MAX << endl;
+	cout << "Size of Short: (short):  " << sizeof(short) << " byte(s)" << "     MIN: " << SHRT_MIN << "; MAX: " << SHRT_MAX << endl;
 	cout << "Size of (unsigned short):" << sizeof(unsigned short) << " byte(s)" << "     MIN: " << "0" << "; MAX: " << USHRT_MAX << endl;
-	cout << "Size of Integer (int): _ " << sizeof (int) << " byte(s)" << "     MIN: " << INT_MIN << "; MAX: " << INT_MAX << endl;
-	cout << "Size of Long (long): ___ " << sizeof (long) << " byte(s)" << "     MIN: " << LONG_MIN << "; MAX: " << LONG_MAX << endl;
-	cout << "Size of (long long): ___ " << sizeof (long long) << " byte(s)" << "     MIN: " << LLONG_MIN << "; MAX: " << LLONG_MAX << endl;
+	cout << "Size of Integer (int): _ " << sizeof(int) << " byte(s)" << "     MIN: " << INT_MIN << "; MAX: " << INT_MAX << endl;
+	cout << "Size of Long (long): ___ " << sizeof(long) << " byte(s)" << "     MIN: " << LONG_MIN << "; MAX: " << LONG_MAX << endl;
+	cout << "Size of (long long): ___ " << sizeof(long long) << " byte(s)" << "     MIN: " << LLONG_MIN << "; MAX: " << LLONG_MAX << endl;
 
-	cout << "Size of Float (float): _ " << sizeof (float) << " byte(s)" << "     MIN: " << FLT_MIN << "; MAX: " << FLT_MAX << endl;  // 7 digits of precision
-	cout << "Size of Double (double): " << sizeof (double) << " byte(s)" << "     MIN: " << DBL_MIN << "; MAX: " << DBL_MAX << endl;  // 15 digits of precision
-	cout << "Size of (long double): _ " << sizeof (long double) << " byte(s)" << "     MIN: " << LDBL_MIN << "; MAX: " << LDBL_MAX << endl;  // 15 digits of precision
+	cout << "Size of Float (float): _ " << sizeof(float) << " byte(s)" << "     MIN: " << FLT_MIN << "; MAX: " << FLT_MAX << endl;  // 7 digits of precision
+	cout << "Size of Double (double): " << sizeof(double) << " byte(s)" << "     MIN: " << DBL_MIN << "; MAX: " << DBL_MAX << endl;  // 15 digits of precision
+	cout << "Size of (long double): _ " << sizeof(long double) << " byte(s)" << "     MIN: " << LDBL_MIN << "; MAX: " << LDBL_MAX << endl;  // 15 digits of precision
 
 	unsigned int ui = 10; // unsigned integer
 	signed int si = -10;  //signed integer, same as (int)
@@ -47,7 +47,7 @@ void dataTypes() {
 }
 
 void operators() {
-	
+
 	// Assignment Operators
 	cout << endl << endl;
 	cout << "----------------=< Assignment Operators >=---------------" << endl;
@@ -64,7 +64,7 @@ void operators() {
 	cout << "a = 10; b = 20;\n";
 	cout << "(a < b) || (a > 15)  ==>  " << ((a < b) || (a > 15)) << endl; // Logical OR
 	cout << "(a < b) && (a > 15)  ==>  " << ((a < b) && (a > 15)) << endl; // Logical AND
-	cout << "!(a < b)  ==>  " << (! (a < b)) << endl; // Logical NOT
+	cout << "!(a < b)  ==>  " << (!(a < b)) << endl; // Logical NOT
 
 	// Bitwise Operators
 	cout << endl;
@@ -110,26 +110,66 @@ void calculator() {
 
 	// Result calculation
 	switch (operation) {
-		case '+' : 
-			result = n1 + n2;
-			break;
-		case '-': 
-			result = n1 - n2;
-			break;
-		case '*': 
-			result = n1 * n2;
-			break;
-		case '/': 
-			result = n1 / n2;
-			break;
-		default:
-			// If operation unsupported display error message
-			cout << "Error: Unsupported operation." << endl;
-			error = true;
+	case '+':
+		result = n1 + n2;
+		break;
+	case '-':
+		result = n1 - n2;
+		break;
+	case '*':
+		result = n1 * n2;
+		break;
+	case '/':
+		result = n1 / n2;
+		break;
+	default:
+		// If operation unsupported display error message
+		cout << "Error: Unsupported operation." << endl;
+		error = true;
 	}
 
 	// If not an error display answer
 	if (!error) cout << endl << n1 << " " << operation << " " << n2 << " = " << result << endl << endl;
+
+}
+
+void conditions() {
+
+	// Conditions IF and ELSE
+	double n;
+	// Data input
+	cout << "Please enter number: ";
+	cin >> n;
+	// This condition checks if the number greater than 100 or 50
+	if (n > 100) {
+		cout << "Your number is greater than 100!" << endl;
+	}
+	else {
+		if (n > 50) {
+			cout << "Your number is not greater than 100 but greater than 50!" << endl;
+		}
+		else {
+			cout << "Your number is not greater than 50!" << endl;
+		}
+	}
+
+	// Conditions IF and ELSE IF
+	// Data input
+	cout << "Please enter number: ";
+	cin >> n;
+	// This condition checks if the number greater than 100 or 50 or 10
+	if (n > 100) {
+		cout << "Your number is greater than 100!" << endl;
+	}
+	else if (n > 50) {
+		cout << "Your number is not greater than 100 but greater than 50!" << endl;
+	}
+	else if (n > 10) {
+		cout << "Your number is not greater than 50 but greater than 10!" << endl;
+	}
+	else {
+		cout << "Your number is not greater than 10!" << endl;
+	}
 
 }
 
@@ -149,7 +189,10 @@ int main() {
 	// userInput();
 
 	// Calculator Using Swith Statement
-	calculator();
+	// calculator();
+
+	// Conditions
+	conditions();
 
 	return 0;
 }

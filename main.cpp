@@ -83,10 +83,54 @@ void operators() {
 }
 
 void userInput() {
+
 	string name;
 	cout << "Please enter your name: " << endl;
 	cin >> name;
 	cout << "Hello " << name << "!" << endl;
+
+}
+
+void calculator() {
+
+	// The calculator that performs a mathematical operation on two numbers, and throws an error if the operation is not supported.
+
+	double n1, n2;
+	double result = 0;
+	char operation;
+	bool error = false;
+
+	// Data input
+	cout << endl << "Please enter first number: ";
+	cin >> n1;
+	cout << "Please enter mathematical operation ('+', '-', '*', '/'): ";
+	cin >> operation;
+	cout << "Please enter second number: ";
+	cin >> n2;
+
+	// Result calculation
+	switch (operation) {
+		case '+' : 
+			result = n1 + n2;
+			break;
+		case '-': 
+			result = n1 - n2;
+			break;
+		case '*': 
+			result = n1 * n2;
+			break;
+		case '/': 
+			result = n1 / n2;
+			break;
+		default:
+			// If operation unsupported display error message
+			cout << "Error: Unsupported operation." << endl;
+			error = true;
+	}
+
+	// If not an error display answer
+	if (!error) cout << endl << n1 << " " << operation << " " << n2 << " = " << result << endl << endl;
+
 }
 
 int main() {
@@ -98,11 +142,14 @@ int main() {
 	// Function that prints size of different data types
 	//dataTypes();
 
-	// Operators
+	// Operators usage examples
 	//operators();
 
-	// User Input
-	userInput();
+	// User Input std::cin
+	// userInput();
+
+	// Calculator Using Swith Statement
+	calculator();
 
 	return 0;
 }

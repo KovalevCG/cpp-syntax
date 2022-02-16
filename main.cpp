@@ -1,11 +1,12 @@
 #include <iostream>
 #include <limits.h>
+#include <string>
 
 using std::cout;
 using std::endl;
 using std::cin;
 using std::string;
-
+using std::stoi;
 
 void coutHello(string str) {
 	cout << "Hello " << str << " !!!\n";
@@ -170,20 +171,48 @@ void conditions() {
 	else {
 		cout << "Your number is not greater than 10!" << endl;
 	}
+	system("pause");
+}
+
+void typecasting() {
+	cout << "-------------------=< Typecasting >=-----------------------" << endl << endl;
+	// Converting String to Integer
+	string s = "12345";
+	int i = stoi(s);
+	cout << "String to Integer:" << endl;
+	cout << "String: \"" << s << "\";   " << "String to Int 'stoi(s)': " << i << ";   " << "Int + 1: " << i + 1 << endl << endl;
+
+	// Float to Int
+	float f = 10.27;
+	i = (int)f;
+	cout << "Float to Integer:" << endl;
+	cout << "Float: " << f << "     Float to Int: " << i << endl << endl;
+
+	// Integer to Float
+	int a = 7, b = 3;
+	cout << "Integer to Float:" << endl;
+	cout << "int a = 7, b = 3; (float) a / (float) b : " << (float)a / (float)b;
+	cout << endl;
+
+	// Integer to String
+	i = 1234567;
+	s = std::to_string(i);
+	cout << "Integer to String:" << endl;
+	cout << "int i = 1234567; std::to_string(i) : \"" << s <<"\"";
+
 
 }
 
 int main() {
 
-
 	// Function that prints "Hello" + string argument + "!!!" to the console
-	//coutHello("C++");
+	// coutHello("C++");
 
 	// Function that prints size of different data types
-	//dataTypes();
+	// dataTypes();
 
 	// Operators usage examples
-	//operators();
+	// operators();
 
 	// User Input std::cin
 	// userInput();
@@ -191,8 +220,11 @@ int main() {
 	// Calculator Using Swith Statement
 	// calculator();
 
-	// Conditions
-	conditions();
+	// Conditions (if), (else) and (else if)
+	// conditions();
+
+	// Typecasting
+	typecasting();
 
 	return 0;
 }

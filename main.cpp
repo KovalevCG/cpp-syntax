@@ -175,6 +175,7 @@ void conditions() {
 }
 
 void typecasting() {
+
 	cout << "-------------------=< Typecasting >=-----------------------" << endl << endl;
 	// Converting String to Integer
 	string s = "12345";
@@ -200,7 +201,41 @@ void typecasting() {
 	cout << "Integer to String:" << endl;
 	cout << "int i = 1234567; std::to_string(i) : \"" << s <<"\"";
 
+}
 
+void storageClasses() {
+
+	// Default storage class
+	auto aa = 10;
+
+	// Extern linkage for non-const globals
+	extern int enc;
+
+	// Extern linkage for const variable
+	extern const int EC;
+
+	// Static
+	static int sa = 10;
+
+}
+
+void cycles() {
+	///////////////// FOR LOOP //////////////////
+	for (int i = 1; i <= 5; i++) {
+		cout << i << " Hello 'for' loop!" << endl;
+	}
+	///////////////// WHILE LOOP ////////////////
+	int i = 1;
+	while (i <= 5) {
+		cout << i << " Hello 'while' loop!" << endl;
+		i++;
+	}
+	//////////////WHILE-DO LOOP///////////////////
+	i = 1;
+	do {
+		cout << i << " Hello 'while-do' loop!" << endl;
+		i++;
+	} while (i <= 5);
 }
 
 int main() {
@@ -224,7 +259,13 @@ int main() {
 	// conditions();
 
 	// Typecasting
-	typecasting();
+	// typecasting();
+
+	// Storage Classes
+	// storageClasses();
+
+	// Cycles. Operators of the cycle (for), (while) and (do while)
+	// cycles();
 
 	return 0;
 }

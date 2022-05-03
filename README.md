@@ -1,2 +1,1 @@
-# learning-cpp
-C++ simple educational projects
+# C++ Syntax
